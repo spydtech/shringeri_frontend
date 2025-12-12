@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --brand-red: #e31b2b;
+  --brand-dark: #1f1f1f;
+  --cream: #efe6df;
+}
+
+html,body,#root { height:100%; }
+body {
+  font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: var(--cream);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* small helpers */
+.h-hero { height: calc(100vh - 80px); }
+
+/* Rounded big corner for red section like screenshot */
+.rounded-big {
+  border-radius: 36px;
+}
+
+/* Scroll indicator */
+.scroll-ind {
+  width:48px;height:56px;border-radius:8px;background:transparent;
+}
