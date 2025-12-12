@@ -1,6 +1,48 @@
 import React, { useEffect, useState, useRef } from "react";
 import { FiShoppingCart, FiX, FiPlus, FiMinus } from "react-icons/fi";
 
+// Correct image imports
+import img1 from "../assets/panneer_tikka.jpeg";
+import img2 from "../assets/chicken_65.jpg";
+import img3 from "../assets/gobi_manchuria.jpg";
+import img4 from "../assets/samosa.jpeg";
+import img5 from "../assets/Tandoori-chicken.jpg";
+import img6 from "../assets/Veg-Springroll.jpeg";
+import img7 from "../assets/Tandoori Aloo Tikka.jpeg";
+import img8 from "../assets/crispy-corn.jpg";
+import img9 from "../assets/Chicken-Lollipop.jpg";
+import img10 from "../assets/Fish-fry.jpg";
+import img11 from "../assets/Popcorn-Chicken.jpg";
+import img12 from "../assets/hyderabadi-chicken-biryani.webp";
+import img13 from "../assets/Mutton-biryani.jpg";
+import img14 from "../assets/veg-biryani.jpg";
+import img15 from "../assets/egg-biriyani.jpeg";
+import img16 from "../assets/Paneer-Biryani.jpg";
+import img17 from "../assets/Prawn-Biryani.jpeg";
+import img18 from "../assets/butter-chicken.jpg";
+import img19 from "../assets/paneer-butter-masala.jpg";
+import img20 from "../assets/rogan-josh.jpeg";
+import img21 from "../assets/veg-kadai.jpg";
+import img22 from "../assets/Chicken-tikka-masala.jpg";
+import img23 from "../assets/palak-paneer.jpg";
+import img24 from "../assets/Naan.jpg";
+import img25 from "../assets/Butter-Naan.jpg";
+import img26 from "../assets/roti.jpg";
+import img27 from "../assets/paratha.jpg";
+import img28 from "../assets/Garlic-Naan.jpg";
+import img29 from "../assets/jeera-rice.jpg";
+import img30 from "../assets/Ghee-Rice.jpg";
+import img31 from "../assets/plai-basmati-rice.jpg";
+import img32 from "../assets/lemon-rice.jpg";
+import img33 from "../assets/Bisi-Bele-Bath.jpg";
+import img34 from "../assets/Gulab-jamun.webp";
+import img35 from "../assets/Rasmalai.jpg";
+import img36 from "../assets/kulfi.jpg";
+import img37 from "../assets/tiramisu.jpg";
+import img38 from "../assets/Choco-chip.jpg";
+import img39 from "../assets/Virgin+Mojito.jpg";
+import img40 from "../assets/Sweet-lassi.jpg";
+import img41 from "../assets/filter-coffee.jpg";
 
 const categories = [
   "Starters & Sides",
@@ -14,67 +56,64 @@ const categories = [
 
 const menuData = {
   "Starters & Sides": [
-    { id: "paneer-tikka", name: "Paneer Tikka", price: 260, unit: "₹", img: "/src/assets/panneer_tikka.jpeg" },
-    { id: "chicken-65", name: "Chicken 65", price: 320, unit: "₹", img: "/src/assets/chicken_65.jpg" },
-    { id: "gobi-manchurian", name: "Gobi Manchurian", price: 220, unit: "₹", img: "/src/assets/gobi_manchuria.jpg" },
-    { id: "samosa", name: "Samosa", price: 80, unit: "₹", img: "/src/assets/samosa.jpeg" },
-    { id: "tandoori-chicken", name: "Tandoori Chicken", price: 420, unit: "₹", img: "/src/assets/Tandoori-chicken.jpg" },
-    { id: "veg-spring-roll", name: "Veg Spring Roll", price: 180, unit: "₹", img: "/src/assets/Veg-Springroll.jpeg" },
-    { id: "Tandoori Aloo Tikka", name: "Tandoori Aloo Tikka", price: 200, unit: "₹", img: "/src/assets/Tandoori Aloo Tikka.jpeg" },
-    { id: "Crispy Corn", name: "Crispy Corn", price: 200, unit: "₹", img: "/src/assets/crispy-corn.jpg" },
-    { id: "Chicken Lollipop", name: "Chicken Lollipop", price: 300, unit: "₹", img: "/src/assets/Chicken-Lollipop.jpg" },
-    { id: "Fish Fry", name: "Fish fry", price: 400, unit: "₹", img: "/src/assets/Fish-fry.jpg" },
-    { id: "Chicken Popcorn", name: "Chicken Popcorn", price: 500, unit: "₹", img: "/src/assets/Popcorn-Chicken.jpg" },
+    { id: "paneer-tikka", name: "Paneer Tikka", price: 260, unit: "₹", img: img1 },
+    { id: "chicken-65", name: "Chicken 65", price: 320, unit: "₹", img: img2 },
+    { id: "gobi-manchurian", name: "Gobi Manchurian", price: 220, unit: "₹", img: img3 },
+    { id: "samosa", name: "Samosa", price: 80, unit: "₹", img: img4 },
+    { id: "tandoori-chicken", name: "Tandoori Chicken", price: 420, unit: "₹", img: img5 },
+    { id: "veg-spring-roll", name: "Veg Spring Roll", price: 180, unit: "₹", img: img6 },
+    { id: "Tandoori Aloo Tikka", name: "Tandoori Aloo Tikka", price: 200, unit: "₹", img: img7 },
+    { id: "Crispy Corn", name: "Crispy Corn", price: 200, unit: "₹", img: img8 },
+    { id: "Chicken Lollipop", name: "Chicken Lollipop", price: 300, unit: "₹", img: img9 },
+    { id: "Fish Fry", name: "Fish fry", price: 400, unit: "₹", img: img10 },
+    { id: "Chicken Popcorn", name: "Chicken Popcorn", price: 500, unit: "₹", img: img11 },
   ],
   Biryani: [
-    { id: "hyderabadi-biryani", name: "Hyderabadi Chicken Biryani", price: 380, unit: "₹", img: "/src/assets/hyderabadi-chicken-biryani.webp" },
-    { id: "mutton-biryani", name: "Mutton Biryani", price: 420, unit: "₹", img: "/src/assets/Mutton-biryani.jpg" },
-    { id: "veg-biryani", name: "Veg Biryani", price: 260, unit: "₹", img: "/src/assets/veg-biryani.jpg" },
-    { id: "egg-biryani", name: "Egg Biryani", price: 300, unit: "₹", img: "/src/assets/egg-biriyani.jpeg" },
-    { id: "Paneer-biryani", name: "Paneer Biryani", price: 300, unit: "₹", img: "/src/assets/Paneer-Biryani.jpg" },
-    { id: "Prawn-biryani", name: "Prawn Biryani", price: 500, unit: "₹", img: "/src/assets/Prawn-Biryani.jpeg" },
+    { id: "hyderabadi-biryani", name: "Hyderabadi Chicken Biryani", price: 380, unit: "₹", img: img12 },
+    { id: "mutton-biryani", name: "Mutton Biryani", price: 420, unit: "₹", img: img13 },
+    { id: "veg-biryani", name: "Veg Biryani", price: 260, unit: "₹", img: img14 },
+    { id: "egg-biryani", name: "Egg Biryani", price: 300, unit: "₹", img: img15 },
+    { id: "Paneer-biryani", name: "Paneer Biryani", price: 300, unit: "₹", img: img16 },
+    { id: "Prawn-biryani", name: "Prawn Biryani", price: 500, unit: "₹", img: img17 },
   ],
   Curries: [
-    { id: "butter-chicken", name: "Butter Chicken", price: 360, unit: "₹", img: "/src/assets/butter-chicken.jpg" },
-    { id: "paneer-butter-masala", name: "Paneer Butter Masala", price: 320, unit: "₹", img: "/src/assets/paneer-butter-masala.jpg" },
-    { id: "rogan-josh", name: "Rogan Josh (Mutton)", price: 420, unit: "₹", img: "/src/assets/rogan-josh.jpeg" },
-    { id: "veg-kadai", name: "Veg Kadai", price: 280, unit: "₹", img: "/src/assets/veg-kadai.jpg" },
-    { id: "Chicken-Tikka-Masala", name: "Chicken Tikka Masala", price: 320, unit: "₹", img: "/src/assets/Chicken-tikka-masala.jpg" },
-    { id: "Palak-Paneer", name: "Palak Paneer", price: 220, unit: "₹", img: "/src/assets/palak-paneer.jpg" },
+    { id: "butter-chicken", name: "Butter Chicken", price: 360, unit: "₹", img: img18 },
+    { id: "paneer-butter-masala", name: "Paneer Butter Masala", price: 320, unit: "₹", img: img19 },
+    { id: "rogan-josh", name: "Rogan Josh (Mutton)", price: 420, unit: "₹", img: img20 },
+    { id: "veg-kadai", name: "Veg Kadai", price: 280, unit: "₹", img: img21 },
+    { id: "Chicken-Tikka-Masala", name: "Chicken Tikka Masala", price: 320, unit: "₹", img: img22 },
+    { id: "Palak-Paneer", name: "Palak Paneer", price: 220, unit: "₹", img: img23 },
   ],
   Breads: [
-    { id: "naan", name: "Naan", price: 40, unit: "₹", img: "/src/assets/Naan.jpg" },
-    { id: "butter-naan", name: "Butter Naan", price: 50, unit: "₹", img: "/src/assets/Butter-Naan.jpg" },
-    { id: "roti", name: "Roti", price: 25, unit: "₹", img: "/src/assets/roti.jpg" },
-    { id: "paratha", name: "Paratha", price: 60, unit: "₹", img: "/src/assets/paratha.jpg" },
-    { id: "Garlic-Naan", name: "Garlic Naan", price: 50, unit: "₹", img: "/src/assets/Garlic-Naan.jpg" },
+    { id: "naan", name: "Naan", price: 40, unit: "₹", img: img24 },
+    { id: "butter-naan", name: "Butter Naan", price: 50, unit: "₹", img: img25 },
+    { id: "roti", name: "Roti", price: 25, unit: "₹", img: img26 },
+    { id: "paratha", name: "Paratha", price: 60, unit: "₹", img: img27 },
+    { id: "Garlic-Naan", name: "Garlic Naan", price: 50, unit: "₹", img: img28 },
   ],
   Rice: [
-    { id: "jeera-rice", name: "Jeera Rice", price: 140, unit: "₹", img: "/src/assets/jeera-rice.jpg" },
-    { id: "ghee-rice", name: "Ghee Rice", price: 160, unit: "₹", img: "/src/assets/Ghee-Rice.jpg" },
-    { id: "plain-rice", name: "Plain Basmati Rice", price: 120, unit: "₹", img: "/src/assets/plai-basmati-rice.jpg" },
-    { id: "Lemon-Rice", name: "Lemon Rice", price: 120, unit: "₹", img: "/src/assets/lemon-rice.jpg" },
-    { id: "Bisi-Bele-Bath", name: "Bisi Bele Bath", price: 180, unit: "₹", img: "/src/assets/Bisi-Bele-Bath.jpg" },
+    { id: "jeera-rice", name: "Jeera Rice", price: 140, unit: "₹", img: img29 },
+    { id: "ghee-rice", name: "Ghee Rice", price: 160, unit: "₹", img: img30 },
+    { id: "plain-rice", name: "Plain Basmati Rice", price: 120, unit: "₹", img: img31 },
+    { id: "Lemon-Rice", name: "Lemon Rice", price: 120, unit: "₹", img: img32 },
+    { id: "Bisi-Bele-Bath", name: "Bisi Bele Bath", price: 180, unit: "₹", img: img33 },
   ],
   Desserts: [
-    { id: "gulab-jamun", name: "Gulab Jamun", price: 120, unit: "₹", img: "/src/assets/Gulab-jamun.webp" },
-    { id: "rasmalai", name: "Rasmalai", price: 140, unit: "₹", img: "/src/assets/Rasmalai.jpg" },
-    { id: "kulfi", name: "Kulfi", price: 110, unit: "₹", img: "/src/assets/kulfi.jpg" },
-    { id: "Tiramisu", name: "Tiramisu", price: 350, unit: "₹", img: "/src/assets/tiramisu.jpg" },
-    { id: "Mini-chocolate-chip", name: "Mini chocolate chip", price: 250, unit: "₹", img: "/src/assets/Choco-chip.jpg" },
+    { id: "gulab-jamun", name: "Gulab Jamun", price: 120, unit: "₹", img: img34 },
+    { id: "rasmalai", name: "Rasmalai", price: 140, unit: "₹", img: img35 },
+    { id: "kulfi", name: "Kulfi", price: 110, unit: "₹", img: img36 },
+    { id: "Tiramisu", name: "Tiramisu", price: 350, unit: "₹", img: img37 },
+    { id: "Mini-chocolate-chip", name: "Mini chocolate chip", price: 250, unit: "₹", img: img38 },
   ],
   Beverages: [
-    { id: "Virgin Mojito", name: "Virgin Mojito", price: 150, unit: "₹", img: "/src/assets/Virgin+Mojito.jpg" },
-    { id: "sweet-lassi", name: "Sweet Lassi", price: 90, unit: "₹", img: "/src/assets/Sweet-lassi.jpg" },
-    { id: "filter-coffee", name: "Filter Coffee", price: 50, unit: "₹", img: "/src/assets/filter-coffee.jpg" },
+    { id: "Virgin Mojito", name: "Virgin Mojito", price: 150, unit: "₹", img: img39 },
+    { id: "sweet-lassi", name: "Sweet Lassi", price: 90, unit: "₹", img: img40 },
+    { id: "filter-coffee", name: "Filter Coffee", price: 50, unit: "₹", img: img41 },
   ],
 };
 
-
 const fmtCurrency = (value) =>
   new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(value);
-
- 
 
 function FloatingCartButton({ count, onClick }) {
   return (
@@ -90,8 +129,6 @@ function FloatingCartButton({ count, onClick }) {
   );
 }
 
-
-  
 function ItemModal({ item, visible, onClose, onAdd }) {
   const [qty, setQty] = useState(1);
 
@@ -161,7 +198,6 @@ function ItemModal({ item, visible, onClose, onAdd }) {
     </div>
   );
 }
-
 
 function CartDrawer({ open, onClose, cart, onUpdate, onClear }) {
   const total = cart.reduce((sum, it) => sum + it.price * it.qty, 0);
@@ -238,7 +274,6 @@ function CartDrawer({ open, onClose, cart, onUpdate, onClear }) {
   );
 }
 
-
 export default function MenuPage() {
   const [active, setActive] = useState(categories[0]);
   const [modalItem, setModalItem] = useState(null);
@@ -249,7 +284,6 @@ export default function MenuPage() {
   const tabsRef = useRef(null);
 
   useEffect(() => {
-    
     try {
       const raw = localStorage.getItem("menu_cart_v2");
       if (raw) setCart(JSON.parse(raw));
@@ -290,7 +324,6 @@ export default function MenuPage() {
 
   const cartCount = cart.reduce((s, it) => s + it.qty, 0);
 
-  
   useEffect(() => {
     const el = tabsRef.current?.querySelector(`[data-cat='${CSS.escape(active)}']`);
     if (el?.scrollIntoView) el.scrollIntoView({ inline: "center", behavior: "smooth", block: "nearest" });
@@ -298,7 +331,6 @@ export default function MenuPage() {
 
   return (
     <div className="min-h-screen bg-[#FFF9F6] pb-24">
-     
       <div className="w-full bg-[#111827] text-white">
         <div className="max-w-[1400px] mx-auto px-5 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -324,7 +356,6 @@ export default function MenuPage() {
         </div>
       </div>
 
-      
       <div className="max-w-[1400px] mx-auto px-5 mt-6">
         <div className="flex items-center justify-between">
           <h1 className="text-3xl md:text-4xl font-extrabold">Menu</h1>
@@ -359,46 +390,43 @@ export default function MenuPage() {
         </div>
       </div>
 
-      
       <div className="max-w-[1400px] mx-auto px-5 mt-8 flex flex-col lg:flex-row gap-8">
-       
         <aside
           id="left-sidebar"
           className={`lg:w-[300px] w-full lg:block ${sidebarOpen ? "block" : "hidden"} lg:static lg:translate-x-0`}
         >
           <div className="bg-[#E6DCCF] rounded-xl p-5 shadow">
             <div className="flex items-center justify-between mb-4">
-              {/* <h3 className="font-bold text-lg">Filters</h3> */}
-              {/* <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-gray-700">Close</button> */}
+              <h3 className="font-bold text-lg">Filters</h3>
+              <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-gray-700">Close</button>
             </div>
 
             <div className="space-y-3">
               <div>
-                {/* <div className="font-semibold text-sm mb-2">Sort</div> */}
-                {/* <select className="w-full p-3 rounded-lg border bg-white"> */}
-                  {/* <option>Popular</option> */}
-                  {/* <option></option> */}
-                  {/* <option>Price — High to Low</option> */}
-                {/* </select> */}
+                <div className="font-semibold text-sm mb-2">Sort</div>
+                <select className="w-full p-3 rounded-lg border bg-white">
+                  <option>Popular</option>
+                  <option>Price — Low to High</option>
+                  <option>Price — High to Low</option>
+                </select>
               </div>
 
               <div>
-                {/* <div className="font-semibold text-sm mb-2">Diet</div> */}
+                <div className="font-semibold text-sm mb-2">Diet</div>
                 <div className="flex gap-2">
-                  {/* <button className="px-3 py-1 rounded-full bg-white">Veg</button> */}
-                  {/* <button className="px-3 py-1 rounded-full bg-white">Non-Veg</button> */}
+                  <button className="px-3 py-1 rounded-full bg-white">Veg</button>
+                  <button className="px-3 py-1 rounded-full bg-white">Non-Veg</button>
                 </div>
               </div>
 
               <div>
-                {/* <div className="font-semibold text-sm mb-2">Price Range</div> */}
-                {/* <input type="range" min="50" max="1000" defaultValue="500" className="w-full" /> */}
+                <div className="font-semibold text-sm mb-2">Price Range</div>
+                <input type="range" min="50" max="1000" defaultValue="500" className="w-full" />
               </div>
             </div>
           </div>
         </aside>
 
-       
         <main className="flex-1">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {items.map((item) => (
@@ -436,7 +464,6 @@ export default function MenuPage() {
             ))}
           </div>
 
-          
           {items.length === 0 && (
             <div className="mt-8 text-center text-gray-600">
               Items coming soon for <strong>{active}</strong>.
@@ -445,13 +472,10 @@ export default function MenuPage() {
         </main>
       </div>
 
-      
       <ItemModal item={modalItem} visible={!!modalItem} onClose={() => setModalItem(null)} onAdd={handleAdd} />
 
-      
       <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} cart={cart} onUpdate={updateCart} onClear={clearCart} />
 
-      
       <FloatingCartButton count={cartCount} onClick={() => setCartOpen(true)} />
     </div>
   );

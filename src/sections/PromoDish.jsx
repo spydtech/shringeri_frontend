@@ -1,4 +1,5 @@
 import React from 'react'
+import bowlImage from '../assets/placeholder-hero.jpeg'
 
 export default function PromoDish(){
   return (
@@ -22,7 +23,7 @@ export default function PromoDish(){
         
         <div className="flex justify-center md:justify-end">
           <img 
-            src="/src/assets/placeholder-hero.jpeg" 
+            src={bowlImage} 
             alt="bowl" 
             className="w-56 sm:w-72 md:w-96 rounded-full shadow-xl object-cover"
           />

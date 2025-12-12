@@ -1,10 +1,11 @@
 import React from "react";
+import imgoffers from "../assets/placeholder-offer.jpeg";
 
 export default function Offers() {
   return (
     <div
       className="py-20 md:py-28 bg-cover bg-center"
-      style={{ backgroundImage: "url('/src/assets/placeholder-offer.jpeg')" }}
+      style={{ backgroundImage: `url(${imgoffers})` }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="bg-black/50 backdrop-blur-sm p-6 sm:p-10 lg:p-14 rounded-2xl text-white max-w-xl sm:max-w-2xl lg:max-w-3xl">

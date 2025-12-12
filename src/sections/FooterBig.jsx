@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logoImage from "../assets/logo.png";
 
 export default function FooterBig() {
   return (
@@ -16,7 +17,7 @@ export default function FooterBig() {
         
         <div className="flex justify-center sm:justify-start">
           <img
-            src="/logo.png"
+            src={logoImage}
             alt="logo"
             className="w-32 sm:w-40 object-contain"
           />

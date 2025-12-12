@@ -1,5 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import mealsImage from "../assets/meals.jpg";
+import biryaniImage from "../assets/hyderabadi-chicken-biryani.webp";
+import noodlesImage from "../assets/noodles.jpeg";
+import icecreamImage from "../assets/Icecream.jpg";
+import cheesecakeImage from "../assets/cheesecake.jpeg";
+
 
 export default function GiftVouchers() {
   const navigate = useNavigate();
@@ -9,35 +15,35 @@ export default function GiftVouchers() {
       title: "For the Meal Lover!",
       price: "From ₹300",
       desc: "A perfect gift for someone who loves South Indian meals.",
-      img: "/src/assets/meals.jpg",
+      img: mealsImage,
       id: 1,
     },
     {
       title: "For the Biriyani Lover!",
       price: "From ₹350",
       desc: "Nothing says love like a plate full of aromatic biriyani.",
-      img: "/src/assets/hyderabadi-chicken-biryani.webp",
+      img: biryaniImage,
       id: 2,
     },
     {
       title: "For the Noodle Craver!",
       price: "From ₹250",
       desc: "Gift a tasty Indo-Chinese bowl of joy.",
-      img: "/src/assets/noodles.jpeg",
+      img: noodlesImage,
       id: 3,
     },
     {
       title: "For the Dessert Craver!",
       price: "From ₹250",
       desc: "Gift a tasty Icecream bowl of joy.",
-      img: "/src/assets/Icecream.jpg",
+      img: icecreamImage,
       id: 4,
     },
     {
       title: "For the Sweet Craver!",
       price: "From ₹250",
       desc: "Gift a tasty Cake of joy.",
-      img: "/src/assets/cheesecake.jpeg",
+      img: cheesecakeImage,
       id: 5,
     },
   ];

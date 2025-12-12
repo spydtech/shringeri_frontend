@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa6";
 import { FaSnapchatGhost } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import logoImage from "../assets/logo.png";
 
 export default function Footer() {
   const linksCol1 = [
@@ -56,7 +57,7 @@ export default function Footer() {
         <div className="flex flex-col items-center xl:items-start">
           <div className=" w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 flex items-center justify-center rounded-lg">
             <img
-              src="/logo.png"
+              src={logoImage}
               alt="logo"
               className="w-full h-full object-contain"
             />

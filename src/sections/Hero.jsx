@@ -1,10 +1,11 @@
 import React from "react";
+import bowlImage from "../assets/placeholder-bowl.jpeg";
 
 export default function Hero() {
   return (
     <section
       className="relative min-h-screen flex items-center bg-cover bg-center"
-      style={{ backgroundImage: "url('/src/assets/placeholder-bowl.jpeg')" }}
+      style={{ backgroundImage: `url(${bowlImage})` }}
     >
       
       <div className="absolute inset-0 bg-black/50"></div>
